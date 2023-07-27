@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Random Text Generator</title>
+    <meta name="description" content="" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/bootstrap-icons.svg"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- CSS for Changing background -->
+    <style>
+      .dark-color {
+        background-color: black;
+        color: white;
+        font-weight: normal !important;
+      }
+
+      .parent {
+        width: 100%;
+        height: 80px !important;
+        border-radius: 10px;
+        padding: 3px;
+        text-align: center;
+        background: linear-gradient(45deg, red, black);
+        color: white;
+        align-items: center;
+        font-style: italic;
+        font-weight: 400;
+        font-family: "Times New Roman";
+      }
+
+      .ToggleButton {
+        display: flex;
+        background-color: black;
+        color: white;
+        padding: 3px 5px;
+        font-size: medium;
+        margin-left: 8px;
+        margin-top: 15px;
+        cursor: pointer;
+      }
+
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-top: -22px !important;
+        font-size: 35px;
+      }
+
+      .wrapper > span {
+        font-weight: 300;
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      .wrapper > span > img {
+        src: url(../image/chatgpt-icon.svg) !important;
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+      }
+
+      /* Generated content body style */
+      .contentWrapper {
+        margin-top: 16px !important;
+        display: grid;
+        grid-auto-rows: minmax();
+        gap: 15px;
+        line-height: normal;
+      }
+    </style>
+  </head>
+
+  <!-- Javascript Logic to the page -->
+  <script>
+    const modeChange = () => {
+      document.body.classList.toggle("dark-color");
+    };
+
+    // Creating Dynamic card to show all the detailed responses
+    var div = document.createElement("div");
+    // div.className = "container";
+    // div.innerHTML = `
+    //       <div class="row">
+    //           <div class="col-5">
+    //             <div class="card">
+    //               <div class="card-header" style="background: linear-gradient(45deg, red, black); color: white; font-weight: bold; font-style: italic; align-items: center;">
+    //                   <span>Your Input Result</span>
+    //               </div>
+
+    //               <div class="card-body" style="background-color: #b4b4b4; color: black;">
+    //                 <p>{{name}}</p>
+    //               </div>
+    //             </div>
+    //           </div>
+    //         </div>
+    // `;
+    // document.getElementById("final").appendChild(div);
+  </script>
+
+  <body class="container-fluid">
+    <header class="parent">
+      <button class="ToggleButton" onclick="modeChange()">Light/Dark</button>
+
+      <h3 class="wrapper">
+        <span>&nbsp;</span>Random Text Generator App
+      </h3>
+    </header>
+
+    <div class="contentWrapper" id="final">
+      <p>{{name}}</p>
+    </div>
+
+    <script src="../node_modules/@popperjs/core/dist/cjs/popper.js"></script>
+    <script src="../node_modules//jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
